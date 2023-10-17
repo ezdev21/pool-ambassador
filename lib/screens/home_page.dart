@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pool_driver/widgets/trip_alert_dialog.dart';
-import 'package:provider/provider.dart';
-import 'package:pool_driver/provider/trip_provider.dart';
 import 'package:pool_driver/widgets/app_drawer.dart';
 
 class HomePage extends StatefulWidget {
@@ -27,7 +25,7 @@ class _HomePageState extends State<HomePage> {
               showDialog(
                   context: context,
                   builder: (BuildContext context) {
-                    return TripAlertDialog();
+                    return const TripAlertDialog();
                   });
             },
           ),

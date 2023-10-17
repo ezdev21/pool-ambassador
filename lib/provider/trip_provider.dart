@@ -8,9 +8,9 @@ class TripProvider extends ChangeNotifier {
 
   void startTrip() {
     dio().post('/', data: {
-      'phone_number': phoneNumber,
-      'pickup_location': pickupLocation,
-      'drop_location': dropLocation
+      'phone_number': phoneNumber.text,
+      'pickup_location': pickupLocation.text,
+      'drop_location': dropLocation.text
     }).then((value) => {});
   }
 }
