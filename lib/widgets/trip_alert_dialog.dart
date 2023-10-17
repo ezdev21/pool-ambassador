@@ -84,7 +84,7 @@ class _TripAlertDialogState extends State<TripAlertDialog> {
             color: const Color(0xFF176AD7),
             textColor: Colors.white,
             minWidth: double.infinity,
-            child: const Text("SUBMIT TRIP"),
+            child: const Text("START TRIP"),
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 Provider.of<TripProvider>(context, listen: false).startTrip();
