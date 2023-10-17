@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pool_driver/widgets/trip_alert_dialog.dart';
+import 'package:provider/provider.dart';
+import 'package:pool_driver/provider/trip_provider.dart';
 import 'package:pool_driver/widgets/app_drawer.dart';
 
 class HomePage extends StatefulWidget {
@@ -9,20 +12,25 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   @override
   Widget build(BuildContext context) {
-   
     return Scaffold(
-      drawer:AppDrawer(),
-      appBar: AppBar(
-        backgroundColor: Color(0xFF176AD7),
-        title: Text('hi'),
-      ),
-      body: Center(
-        child: Text('pool'),
-      ),
-     
-    );
+        drawer: const AppDrawer(),
+        appBar: AppBar(
+          backgroundColor: const Color(0xFF176AD7),
+          title: const Text('hi'),
+        ),
+        body: Center(
+          child: MaterialButton(
+            child: const Text("Start Trip"),
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return TripAlertDialog();
+                  });
+            },
+          ),
+        ));
   }
 }
